@@ -1,5 +1,6 @@
 package com.nayak.springdatajpasample.entity;
 
+import com.nayak.springdatajpasample.entity.embedded.Benefit;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,9 @@ public class EmployeeDetail extends BaseEntity {
     private String emergencyContact;
 
     private String bloodGroup;
+
+    @Embedded
+    private Benefit benefits;
 
     @OneToOne(fetch = FetchType.LAZY)
     private Employee employee;
